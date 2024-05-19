@@ -1,6 +1,5 @@
 const Sleep = require("../models/sleep");
 
-
 // function to save new sleep records in database
 const createSleep = async (req, res) => {
   try {
@@ -20,7 +19,7 @@ const getSleepByUser = async (req, res) => {
     const sleeps = await Sleep.find(filter).sort({ timestamp: -1 });
     res.status(200).send({ User: req.params.userId, SleepRecords: sleeps });
   } catch (error) {
-    res.status(400).send({ success: false, message: error });
+    res.status(500).send({ success: false, message: error });
   }
 };
 
@@ -37,7 +36,7 @@ const deleteSleepByID = async (req, res) => {
     }
     res.status(200).send({ Deleted: sleep });
   } catch (error) {
-    res.status(400).send({ success: false, message: error });
+    res.status(500).send({ success: false, message: error });
   }
 };
 
