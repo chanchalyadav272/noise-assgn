@@ -1,5 +1,7 @@
 const Sleep = require("../models/sleep");
 
+
+// function to save new sleep records in database
 const createSleep = async (req, res) => {
   try {
     const newSleep = new Sleep(req.body);
@@ -11,6 +13,7 @@ const createSleep = async (req, res) => {
   }
 };
 
+// function to retrieve saved sleep records of specific user from database
 const getSleepByUser = async (req, res) => {
   const filter = { userId: req.params.userId };
   try {
@@ -21,6 +24,7 @@ const getSleepByUser = async (req, res) => {
   }
 };
 
+// function to delete specific sleep record from database
 const deleteSleepByID = async (req, res) => {
   const filter = req.params.recordId;
   try {
