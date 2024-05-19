@@ -8,7 +8,7 @@ https://sleep-tracker.onrender.com
 
 ## Setup and Run
 
-### Run the following commands in termial
+### Run the following commands in terminal
 
 ```bash
 git clone https://github.com/chanchalyadav272/noise-assgn.git
