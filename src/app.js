@@ -5,8 +5,8 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const morgan = require("morgan");
 
-const sleepRoutes = require("./src/routes/sleepRoutes");
-const connectDB = require("./src/databases/db");
+const sleepRoutes = require("./routes/sleepRoutes");
+const connectDB = require("./databases/db");
 
 const app = express();
 const PORT = process.env.PORT || 3000;

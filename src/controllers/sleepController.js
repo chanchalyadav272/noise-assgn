@@ -4,8 +4,9 @@ const createSleep = async (req, res) => {
   try {
     const newSleep = new Sleep(req.body);
     await newSleep.save();
-    res.status(200).send({ saved: newSleep });
+    res.status(200).send({ Added: newSleep });
   } catch (error) {
+    // console.error(error);
     res.status(400).send({ success: false, message: error });
   }
 };
@@ -14,7 +15,7 @@ const getSleepByUser = async (req, res) => {
   const filter = { userId: req.params.userId };
   try {
     const sleeps = await Sleep.find(filter).sort({ timestamp: -1 });
-    res.status(200).send({ user: req.params.userId, sleeps: sleeps });
+    res.status(200).send({ User: req.params.userId, SleepRecords: sleeps });
   } catch (error) {
     res.status(400).send({ success: false, message: error });
   }
