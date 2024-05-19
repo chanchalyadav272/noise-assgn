@@ -87,6 +87,7 @@ npm start
 
 - **Status Codes:**
   - `200 OK`: Successfully retrieved sleep records.
+  - `404 Not Found`: Record not found.
   - `500 Internal Server Error`: Error retrieving sleep records.
 
 #### DELETE `/sleep/:recordId`

@@ -17,6 +17,11 @@ const getSleepByUser = async (req, res) => {
   const filter = { userId: req.params.userId };
   try {
     const sleeps = await Sleep.find(filter).sort({ timestamp: -1 });
+    if (sleeps.length == 0) {
+      return res
+        .status(404)
+        .send({ success: false, message: "Record not found" });
+    }
     res.status(200).send({ User: req.params.userId, SleepRecords: sleeps });
   } catch (error) {
     res.status(500).send({ success: false, message: error });
