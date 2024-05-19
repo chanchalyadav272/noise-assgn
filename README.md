@@ -8,13 +8,15 @@ https://sleep-tracker.onrender.com
 
 ## Setup and Run
 
+### Run the following commands in termial
+
 ```bash
 git clone https://github.com/chanchalyadav272/noise-assgn.git
 cd noise-assgn 
 npm install
 ```
 
-### Create a `.env` file in the root directory and add your MongoDB URI:
+### Create a `.env` file in the root directory and add your MongoDB URI
 
 ```bash
 MONGO_URI=your_mongodb_access_uri
