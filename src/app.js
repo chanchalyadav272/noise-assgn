@@ -19,6 +19,10 @@ app.use(morgan("dev"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+app.get("/", (req, res) => {
+  res.send("Welcome to the Sleep Tracker API!");
+});
+
 app.use("/sleep", sleepRoutes);
 
 app.listen(PORT, () => {
