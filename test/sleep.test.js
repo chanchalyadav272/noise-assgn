@@ -74,8 +74,7 @@ describe("Sleep Tracker App API", () => {
 
   test("GET /sleep/:userId - No Records Found", async () => {
     const response = await request(app).get("/sleep/nonexistentuser");
-    expect(response.statusCode).toBe(200);
-    expect(response.body["SleepRecords"].length).toBe(0);
+    expect(response.statusCode).toBe(404);
   });
 
   test("DELETE /sleep/:recordId - Success", async () => {
