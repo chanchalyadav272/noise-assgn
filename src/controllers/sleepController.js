@@ -8,7 +8,7 @@ const createSleep = async (req, res) => {
     res.status(200).send({ Added: newSleep });
   } catch (error) {
     // console.error(error);
-    res.status(400).send({ success: false, message: error });
+    res.status(400).send({ success: false, message: error.message });
   }
 };
 
@@ -24,7 +24,7 @@ const getSleepByUser = async (req, res) => {
     }
     res.status(200).send({ User: req.params.userId, SleepRecords: sleeps });
   } catch (error) {
-    res.status(500).send({ success: false, message: error });
+    res.status(500).send({ success: false, message: error.message });
   }
 };
 
@@ -41,7 +41,7 @@ const deleteSleepByID = async (req, res) => {
     }
     res.status(200).send({ Deleted: sleep });
   } catch (error) {
-    res.status(500).send({ success: false, message: error });
+    res.status(500).send({ success: false, message: error.message });
   }
 };
 
